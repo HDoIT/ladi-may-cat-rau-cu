@@ -129,6 +129,50 @@
             left: 0 !important;
         }
 
+        .order-popup {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            background: #fff;
+            padding: 12px 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            z-index: 99999999;
+            animation: slideIn 0.5s ease forwards;
+            font-family: 'Segoe UI', sans-serif;
+            transition: opacity 0.5s ease;
+        }
+
+        .order-popup.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .order-popup .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        .order-popup .info {
+            font-size: 14px;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
         a,
         abbr,
         acronym,
@@ -4025,16 +4069,15 @@
             <div class='ladi-section-background'></div>
             <div class="ladi-container">
                 <div id="IMAGE6" class="ladi-element">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
-                      <iframe 
-                        src="https://www.youtube.com/embed/F9fa9AiZNrM?rel=0&autoplay=0&enablejsapi=1" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                      </iframe>
+                    <div
+                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+                        <iframe src="https://www.youtube.com/embed/F9fa9AiZNrM?rel=0&autoplay=0&enablejsapi=1"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                        </iframe>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
         <div id="SECTION7" class='ladi-section'>
@@ -5632,6 +5675,13 @@
     <div id="backdrop-popup" class="backdrop-popup"></div>
     <div id="backdrop-dropbox" class="backdrop-dropbox"></div>
     <div id="lightbox-screen" class="lightbox-screen"></div>
+    <div id="order-popup" class="order-popup hidden">
+        <img class="avatar" src="https://i.pravatar.cc/40?img=1" alt="Avatar">
+        <div class="info">
+            <p><strong class="name">Nguyễn V***</strong> - <span class="phone">09***3456</span></p>
+            <p class="time">Vừa đặt cách đây 1 phút</p>
+        </div>
+    </div>
     <script id="script_lazyload"
         type="text/javascript">window.lazyload_run = function (dom, is_first, check_dom_rect) { if (check_dom_rect && (document.body.clientWidth <= 0 || document.body.clientheight <= 0)) { return setTimeout(function () { window.lazyload_run(dom, is_first, check_dom_rect); }, 1); } var style_lazyload = document.getElementById('style_lazyload'); var list_element_lazyload = dom.querySelectorAll('body.lazyload .ladi-overlay, body.lazyload .ladi-box, body.lazyload .ladi-button-background, body.lazyload .ladi-collection-item, body.lazyload .ladi-countdown-background, body.lazyload .ladi-form-item-background, body.lazyload .ladi-form-label-container .ladi-form-label-item.image, body.lazyload .ladi-frame-background, body.lazyload .ladi-gallery-view-item, body.lazyload .ladi-gallery-control-item, body.lazyload .ladi-headline, body.lazyload .ladi-image-background, body.lazyload .ladi-image-compare, body.lazyload .ladi-list-paragraph ul li, body.lazyload .ladi-section-background, body.lazyload .ladi-survey-option-background, body.lazyload .ladi-survey-option-image, body.lazyload .ladi-tabs-background, body.lazyload .ladi-video-background, body.lazyload .ladi-banner, body.lazyload .ladi-spin-lucky-screen, body.lazyload .ladi-spin-lucky-start'); var docEventScroll = window; for (var i = 0; i < list_element_lazyload.length; i++) { var rect = list_element_lazyload[i].getBoundingClientRect(); if (rect.x == "undefined" || rect.x == undefined || rect.y == "undefined" || rect.y == undefined) { rect.x = rect.left; rect.y = rect.top; } var offset_top = rect.y + window.scrollY; if (offset_top >= window.scrollY + window.innerHeight || window.scrollY >= offset_top + list_element_lazyload[i].offsetHeight) { list_element_lazyload[i].classList.add('ladi-lazyload'); } } if (typeof style_lazyload != "undefined" && style_lazyload != undefined) { style_lazyload.parentElement.removeChild(style_lazyload); } document.body.classList.remove("lazyload"); var currentScrollY = window.scrollY; var stopLazyload = function (event) { if (event.type == "scroll" && window.scrollY == currentScrollY) { currentScrollY = -1; return; } docEventScroll.removeEventListener('scroll', stopLazyload); list_element_lazyload = document.getElementsByClassName('ladi-lazyload'); while (list_element_lazyload.length > 0) { list_element_lazyload[0].classList.remove('ladi-lazyload'); } }; if (is_first) { var scrollEventPassive = null; try { var opts = Object.defineProperty({}, 'passive', { get: function () { scrollEventPassive = { passive: true }; } }); window.addEventListener('testPassive', null, opts); window.removeEventListener('testPassive', null, opts); } catch (e) { } docEventScroll.addEventListener('scroll', stopLazyload, scrollEventPassive); } return dom; }; window.lazyload_run(document, true, true);</script>
     <!--[if lt IE 9]><script src="https://w.ladicdn.com/v4/source/html5shiv.min.js?v=1728011352003"></script><script src="https://w.ladicdn.com/v4/source/respond.min.js?v=1728011352003"></script><![endif]-->
@@ -5784,6 +5834,52 @@
                 if (typeof window.LadiPageScript == "undefined" || typeof window.ladi == "undefined" || window.ladi == undefined) { setTimeout(run, 100); return; } window.LadiPageApp = window.LadiPageApp || new window.LadiPageAppV2(); window.LadiPageScript.runtime.ladipage_id = '66c071105f8ad60013ff52c0'; window.LadiPageScript.runtime.publish_platform = 'LADIPAGEDNS'; window.LadiPageScript.runtime.is_mobile_only = true; window.LadiPageScript.runtime.version = '1728011352003'; window.LadiPageScript.runtime.cdn_url = 'https://w.ladicdn.com/v4/source/'; window.LadiPageScript.runtime.DOMAIN_SET_COOKIE = ["dinhvidoscom.click"]; window.LadiPageScript.runtime.DOMAIN_FREE = ["preview.ldpdemo.com", "ldp.page"]; window.LadiPageScript.runtime.bodyFontSize = 12; window.LadiPageScript.runtime.store_id = "5e50f07539fcf22c6eebfd18"; window.LadiPageScript.runtime.time_zone = 7; window.LadiPageScript.runtime.currency = "VND"; window.LadiPageScript.runtime.tracking_page = "@@tracking_page"; window.LadiPageScript.runtime.convert_replace_str = true; window.LadiPageScript.runtime.desktop_width = 960; window.LadiPageScript.runtime.mobile_width = 420; window.LadiPageScript.runtime.formdata = true; window.LadiPageScript.runtime.tracking_button_click = true; window.LadiPageScript.runtime.publish_time = 1728092304675; window.LadiPageScript.runtime.lang = "vi"; window.LadiPageScript.run(true); window.LadiPageScript.run(false); window.LadiPageScript.runEventScroll();
             }; run();
         })();</script>
+
+<script>
+    const orders = [
+      { name: "Nguyễn Văn A", phone: "0987123456", avatar: "https://i.pravatar.cc/40?img=1", time: "1 phút trước" },
+      { name: "Trần Thị B", phone: "0902345678", avatar: "https://i.pravatar.cc/40?img=2", time: "3 phút trước" },
+      { name: "Lê Văn C", phone: "0919123123", avatar: "https://i.pravatar.cc/40?img=3", time: "vừa xong" },
+      { name: "Phạm Thị D", phone: "0934231234", avatar: "https://i.pravatar.cc/40?img=4", time: "2 phút trước" },
+    ];
+    
+    function maskName(name) {
+      const parts = name.split(" ");
+      const lastName = parts.pop();
+      return [...parts, lastName[0] + "***"].join(" ");
+    }
+    
+    function maskPhone(phone) {
+      return phone.substring(0, 2) + "***" + phone.slice(-4);
+    }
+    
+    let currentIndex = 0;
+    
+    function showOrder() {
+      const popup = document.getElementById("order-popup");
+      const order = orders[currentIndex];
+    
+      popup.querySelector(".avatar").src = order.avatar;
+      popup.querySelector(".name").textContent = maskName(order.name);
+      popup.querySelector(".phone").textContent = maskPhone(order.phone);
+      popup.querySelector(".time").textContent = `Đặt hàng ${order.time}`;
+    
+      popup.classList.remove("hidden");
+    
+      setTimeout(() => {
+        popup.classList.add("hidden");
+    
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % orders.length;
+          showOrder();
+        }, 2000); 
+      }, 4000); 
+    }
+    
+    // Khởi động
+    setTimeout(showOrder, 1000);
+    </script>
+    
     <script>
         function startCountdown(targetHour = 21) {
             const countdown = () => {
